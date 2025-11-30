@@ -27,7 +27,7 @@
 
 ```
 ssh -i connect.key ubuntu@158.180.16.243
-cd /opt/agrobank
+cd /opt/agrobank/agrobank_hakaton
 docker compose up -d --build
 docker compose logs -f
 ```

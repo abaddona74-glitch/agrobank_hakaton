@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
-
 	const news = [
 		{
 			id: 1,
@@ -41,13 +39,14 @@
 	</div>
 
 	<div class="grid gap-6">
-		{#each news as item}
+		{#each news as item (item.id)}
 			<div class="rounded-lg border bg-card p-6 text-card-foreground shadow-sm">
 				<div class="mb-4 flex flex-col space-y-1.5">
 					<h3 class="text-2xl leading-none font-semibold tracking-tight">{item.title}</h3>
 					<p class="text-sm text-muted-foreground">{item.date}</p>
 				</div>
 				<div class="prose max-w-none dark:prose-invert">
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 					{@html item.content}
 				</div>
 			</div>

@@ -53,7 +53,7 @@ jobs:
           key: ${{ secrets.DEPLOY_SSH_KEY }}
           script: |
             set -e
-            cd /opt/agrobank
+            cd /opt/agrobank/agrobank_hakaton
             docker compose pull || true
             docker compose build
             docker compose up -d

@@ -1,3 +1,8 @@
+# Local environment files (do not commit secrets)
+.env
+.env.*
+*.env
+
 # .gitignore for Spring Boot (backend) + Svelte (frontend)
 
 # ---------- OS ----------

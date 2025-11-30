@@ -37,3 +37,13 @@ jobs:
             docker compose build
             docker compose up -d
             docker system prune -f || true
+
+      - name: Fix permissions on server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            sudo mkdir -p /opt/agrobank/agrobank_hakaton
+            sudo chown -R ${{ secrets.DEPLOY_USER }}:${{ secrets.DEPLOY_USER }} /opt/agrobank/agrobank_hakaton

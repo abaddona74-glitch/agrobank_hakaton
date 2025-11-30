@@ -8,7 +8,10 @@
 
 <header class="border-b">
 	<nav class="mx-auto flex max-w-4xl items-center justify-between p-4">
-		<a href="/" class="font-semibold">Agrobank</a>
+		<div class="flex items-center gap-6">
+			<a href="/" class="font-semibold">Agrobank</a>
+			<a href="/news" class="text-sm font-medium hover:underline">Yangiliklar</a>
+		</div>
 		<div class="flex items-center gap-2">
 			<a
 				href="/login"

@@ -15,7 +15,6 @@ jobs:
     defaults:
       run:
         working-directory: backend
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,36 +37,35 @@ jobs:
         run: mvn -B -q -DskipTests=false test
 
   frontend:
-  name: Frontend (SvelteKit)
-  runs-on: ubuntu-latest
-  defaults:
-    run:
-      working-directory: frontend
+    name: Frontend (SvelteKit)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: "18"
-        cache: 'pnpm'
-        cache-dependency-path: frontend/pnpm-lock.yaml
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: 'pnpm'
+          cache-dependency-path: frontend/pnpm-lock.yaml
 
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v4
-      with:
-        version: 9
+      - name: Verify pnpm
+        run: pnpm -v
 
-    - name: Verify pnpm
-      run: pnpm -v   # workflow da pnpm o‘rnatilganligini tekshiradi
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
 
-    - name: Install deps
-      run: pnpm install --frozen-lockfile
+      - name: Lint
+        run: pnpm run lint
 
-    - name: Lint
-      run: pnpm run lint
-
-    - name: Build
-      run: pnpm run build
+      - name: Build
+        run: pnpm run build

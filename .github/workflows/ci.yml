@@ -51,10 +51,8 @@ jobs:
           cache: 'pnpm'
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
-         with:
+        with:
           version: 9
-      - name: Verify pnpm
-        run: pnpm -v
       - name: Install deps
         run: pnpm install --frozen-lockfile
       - name: Lint

@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:18
+    restart: always
+    environment:
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: ap_pass
+      POSTGRES_DB: appdb
+    ports:
+      - "55555:5432"
+    volumes:
+      - db-data:/var/lib/postgresql
+
+  redis:
+    image: redis:8
+    restart: always
+    ports:
+      - "6379:6379"
+
+volumes:
+  db-data:

@@ -1,0 +1,106 @@
+# .gitignore for Spring Boot (backend) + Svelte (frontend)
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ---------- IDEs / Editors ----------
+# IntelliJ / Android Studio
+.idea/
+*.iml
+*.iws
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# NetBeans
+nbproject/private/
+
+# ---------- Java / Build ----------
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+build/
+
+# Java artifacts
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven generated
+dependency-reduced-pom.xml
+release.properties
+
+# ---------- Spring Boot / config secrets ----------
+# Local / secret properties
+*.keystore
+*.jks
+application-*.local.properties
+application-*.secret.properties
+application-local.yml
+.env
+.env.*
+
+
+# ---------- Node / Svelte / frontend ----------
+node_modules/
+.pnpm-store/
+.pnp.*
+# SvelteKit / build outputs
+.svelte-kit/
+.build/
+build/
+dist/
+public/build/
+.vite/
+.vite-cache/
+.cache/
+.nyc_output/
+.parcel-cache/
+
+# logs, npm/yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# lockfiles - usually committed; uncomment to ignore if desired
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ---------- Static analysis / test / coverage ----------
+coverage/
+coverage-final.json
+test-reports/
+reports/
+target/site/
+
+# ---------- Docker / containers ----------
+docker-compose.override.yml
+docker-compose.*.yml
+.env.docker
+
+# ---------- Misc ----------
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+.idea/**/workspace.xml
+.DS_Store
+Thumbs.db

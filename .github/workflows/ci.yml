@@ -60,6 +60,12 @@ jobs:
         run: corepack prepare pnpm@9 --activate
       - name: Verify pnpm
         run: pnpm -v
+      - name: Fallback install pnpm (if missing)
+        if: ${{ failure() }}
+        run: |
+          echo "pnpm activation failed, installing globally via npm"
+          npm install -g pnpm@9
+          pnpm -v
       - name: Install deps
         run: pnpm install --frozen-lockfile
       - name: Lint

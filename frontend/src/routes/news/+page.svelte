@@ -6,7 +6,8 @@
 			id: 1,
 			title: 'Agrobank & IT Community of Uzbekistan - AI500! 1-bosqich',
 			date: '26-noyabr – 30-noyabr',
-			summary: 'Tabriklaymiz — siz 1-bosqichga o‘tdingiz! Birinchi vazifangiz — real hayotdagi bir muammoni tanlab, unga bo‘lgan IT-yechimingizni demo veb-sayt orqali taqdim etishdir.',
+			summary:
+				'Tabriklaymiz — siz 1-bosqichga o‘tdingiz! Birinchi vazifangiz — real hayotdagi bir muammoni tanlab, unga bo‘lgan IT-yechimingizni demo veb-sayt orqali taqdim etishdir.',
 			content: `
 				<p class="mb-2"><strong>Tabriklaymiz — siz 1-bosqichga o‘tdingiz!</strong></p>
 				<p class="mb-4">Birinchi vazifangiz — real hayotdagi bir muammoni tanlab, unga bo‘lgan IT-yechimingizni demo veb-sayt orqali taqdim etishdir. Bu sizning g‘oyangiz qanchalik muhim masalani hal qilishi va jamoangiz uni yecha olishini ko‘rsatish uchun imkoniyatdir. Aynan shu bosqichdagi aniqlik — yakuniy taqdimot va mahsulotingizning asosini yaratadi.</p>
@@ -34,19 +35,19 @@
 </svelte:head>
 
 <div class="container mx-auto py-8">
-	<div class="flex items-center justify-between mb-6">
+	<div class="mb-6 flex items-center justify-between">
 		<h1 class="text-3xl font-bold">Yangiliklar</h1>
 		<a href="/" class="text-primary hover:underline">Bosh sahifaga qaytish</a>
 	</div>
 
 	<div class="grid gap-6">
 		{#each news as item}
-			<div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
-				<div class="flex flex-col space-y-1.5 mb-4">
-					<h3 class="text-2xl font-semibold leading-none tracking-tight">{item.title}</h3>
+			<div class="rounded-lg border bg-card p-6 text-card-foreground shadow-sm">
+				<div class="mb-4 flex flex-col space-y-1.5">
+					<h3 class="text-2xl leading-none font-semibold tracking-tight">{item.title}</h3>
 					<p class="text-sm text-muted-foreground">{item.date}</p>
 				</div>
-				<div class="prose dark:prose-invert max-w-none">
+				<div class="prose max-w-none dark:prose-invert">
 					{@html item.content}
 				</div>
 			</div>

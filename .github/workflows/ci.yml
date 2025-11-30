@@ -49,11 +49,15 @@ jobs:
         with:
           node-version: '18'
           cache: 'pnpm'
+      - name: Enable Corepack
+        run: corepack enable
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
           run_install: false
+      - name: Activate pnpm via Corepack
+        run: corepack prepare pnpm@9 --activate
       - name: Verify pnpm
         run: pnpm -v
       - name: Install deps

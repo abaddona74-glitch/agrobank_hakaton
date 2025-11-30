@@ -3,9 +3,8 @@
 	let { children } = $props();
 </script>
 
-<div class="flex flex-col min-h-screen">
-	<main class="flex flex-1 flex-col p-4 w-full max-w-4xl mx-auto box-border">
+<div class="flex min-h-screen flex-col">
+	<main class="mx-auto box-border flex w-full max-w-4xl flex-1 flex-col p-4">
 		{@render children()}
 	</main>
 </div>
-
